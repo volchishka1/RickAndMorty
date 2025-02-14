@@ -3,10 +3,20 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
+    "build-aab": "npx react-native build-android --mode=release",
+    "build-apk": "cd android && ./gradlew assembleRelease",
+    "pod-repo-update": "cd ios && pod repo update",
+    "install-pods": "cd ios && pod install --repo-update",
+    "reinstall-pods": "rm -rf ios/build ios/Pods ios/Podfile.lock && yarn install-pods",
+    "reinstall-node-modules": "rm -rf node_modules && yarn",
+    "run-ios-15": "npx react-native run-ios --simulator=\"iPhone 15\"",
+    "run-ios-15-pro-max": "npx react-native run-ios --simulator=\"iPhone 15 Pro Max\"",
     "ios": "react-native run-ios",
+    "run-ios-se": "npx react-native run-ios --simulator=\"iPhone SE (3rd generation)\"",
+    "run-android": "npx react-native run-android",
+    "setup": "yarn",
+    "start": "npx react-native start --reset-cache",
     "lint": "eslint .",
-    "start": "react-native start",
     "test": "jest"
   },
   "dependencies": {
