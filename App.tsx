@@ -1,17 +1,13 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import 'react-native-gesture-handler';
 
 import React from 'react';
-import { Text, View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { Navigator } from '@navigation/navigator.tsx';
 
 export const App = () => {
   return (
-    <View>
-      <Text>{'LOLKa'}</Text>
-    </View>
+    <SafeAreaProvider>
+      <Navigator />
+    </SafeAreaProvider>
   );
 };
