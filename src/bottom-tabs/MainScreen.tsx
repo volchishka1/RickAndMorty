@@ -5,10 +5,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { CharacterSvg } from '@assets/character.tsx';
 import { SettingSvg } from '@assets/setting';
 import { ROUTES } from '@constants/routes';
-import { DetailsSvg } from '@assets/details.tsx';
 import { MainStackScreenNavigatorParamList } from '@navigation/types';
 import { CharactersScreen } from '@screens/charactersScreen';
-import { DetailsScreen } from '@screens/detailsScreen';
 import { SettingScreen } from '@screens/settingScreen';
 
 export const MainScreenTabNavigator = () => {
@@ -31,16 +29,6 @@ export const MainScreenTabNavigator = () => {
           tabBarLabel: `Characters`,
           tabBarIcon: () => {
             return <CharacterSvg />;
-          },
-        }}
-      />
-      <Tab.Screen
-        name={ROUTES.DETAILS_SCREEN}
-        component={DetailsScreen}
-        options={{
-          tabBarLabel: `Details`,
-          tabBarIcon: () => {
-            return <DetailsSvg />;
           },
         }}
       />
