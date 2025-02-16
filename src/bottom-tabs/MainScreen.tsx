@@ -24,7 +24,7 @@ export const MainScreenTabNavigator = () => {
       }}
     >
       <Tab.Screen
-        name={ROUTES.CHARACTERS_SCREEN}
+        name={ROUTES.DETAILS_STACK_SCREEN}
         component={DetailsStackNavigator}
         options={{
           tabBarLabel: `Characters`,
