@@ -11,7 +11,6 @@ export const saveString = async (key, value) => {
 
 export const saveItem = async (key, value) => {
   saveString(key, JSON.stringify(value));
-  console.log(`saveAsync${value}`);
 };
 
 export const getItem = async (key) => {
