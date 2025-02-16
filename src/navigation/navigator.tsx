@@ -6,7 +6,7 @@ export const Navigator = () => {
   const scheme = useColorScheme();
 
   return (
-    <NavigationContainer theme={scheme === 'dark' ? DefaultTheme : DarkTheme}>
+    <NavigationContainer theme={scheme === 'dark' ? DarkTheme : DefaultTheme}>
       <MainScreenTabNavigator />
     </NavigationContainer>
   );

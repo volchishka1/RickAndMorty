@@ -11,11 +11,9 @@ import setColorScheme = Appearance.setColorScheme;
 
 export const App = () => {
   // Callback for taking colorTheme from AsyncStorage
-  const scheme = useColorScheme();
   const getAppTheme = useCallback(async () => {
-    const schemesDark = await getItem('colorSchemeDark');
-    const schemesLight = await getItem('colorSchemeLight');
-    scheme === 'light' ? setColorScheme(schemesLight) : setColorScheme(schemesDark);
+    const schemesDark = await getItem('colorScheme');
+    setColorScheme(schemesDark);
   }, []);
 
   useEffect(() => {

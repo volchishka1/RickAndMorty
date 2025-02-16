@@ -9,7 +9,7 @@ export const SettingScreenView = () => {
   // function for switch and add colorScheme of the app to asyncStorage
   const switchTheme = () => {
     scheme === 'dark' ? setColorScheme('light') : setColorScheme('dark');
-    scheme === 'dark' ? saveItem('colorSchemeDark', scheme) : saveItem('colorSchemeLight', scheme);
+    scheme === 'dark' ? saveItem('colorScheme', 'light') : saveItem('colorScheme', 'dark');
   };
 
   return (
