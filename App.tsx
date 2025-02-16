@@ -6,7 +6,7 @@ import { Navigator } from '@navigation/navigator.tsx';
 import { Provider } from 'react-redux';
 import { store } from '@root/store/store.ts';
 import { getItem } from '@constants/asyncStorage.tsx';
-import { Appearance, useColorScheme } from 'react-native';
+import { Appearance } from 'react-native';
 import setColorScheme = Appearance.setColorScheme;
 
 export const App = () => {
