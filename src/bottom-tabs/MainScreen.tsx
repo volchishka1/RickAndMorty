@@ -6,8 +6,8 @@ import { CharacterSvg } from '@assets/character.tsx';
 import { SettingSvg } from '@assets/setting';
 import { ROUTES } from '@constants/routes';
 import { MainStackScreenNavigatorParamList } from '@navigation/types';
-import { CharactersScreen } from '@screens/charactersScreen';
 import { SettingScreen } from '@screens/settingScreen';
+import { DetailsStackNavigator } from '@root/stack/detailsStack.tsx';
 
 export const MainScreenTabNavigator = () => {
   const Tab = createBottomTabNavigator<MainStackScreenNavigatorParamList>();
@@ -15,6 +15,7 @@ export const MainScreenTabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={{
+        // tabBarStyle: { display: url ? 'none' : 'flex' },
         headerShown: false,
         tabBarShowLabel: true,
         tabBarLabelStyle: {
@@ -24,7 +25,7 @@ export const MainScreenTabNavigator = () => {
     >
       <Tab.Screen
         name={ROUTES.CHARACTERS_SCREEN}
-        component={CharactersScreen}
+        component={DetailsStackNavigator}
         options={{
           tabBarLabel: `Characters`,
           tabBarIcon: () => {
