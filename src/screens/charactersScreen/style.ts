@@ -1,21 +1,24 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { StyleSheet, ViewStyle } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export type CharactersScreenViewStyle = {
   rootContainer: ViewStyle;
-  buttonStyle: ViewStyle;
-  textButtonStyle: TextStyle;
+  centerContainer: ViewStyle;
 };
+
+const insets = useSafeAreaInsets();
 
 export const charactersScreenViewStyle = StyleSheet.create<CharactersScreenViewStyle>({
   rootContainer: {
     justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: insets.top,
+    paddingBottom: insets.bottom,
+    flex: 1,
   },
-  buttonStyle: {
-    marginTop: '25%',
-    marginLeft: '5%',
-  },
-  textButtonStyle: {
-    color: '#3b5496',
-    fontSize: 18,
+  centerContainer: {
+    flexDirection: 'column',
+    width: '100%',
+    marginBottom: -35,
   },
 });
