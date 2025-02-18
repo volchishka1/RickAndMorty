@@ -7,7 +7,7 @@ import { HttpCode } from '../constants/const';
 const createAPI = (): AxiosInstance => {
   const api = axios.create({
     // baseURL: url,
-    baseURL: 'https://rickandmortyapi.com',
+    baseURL: 'https://rickandmortyapi.com/api',
     // timeout: Number(process.env.REQUEST_TIMEOUT),
   });
 
