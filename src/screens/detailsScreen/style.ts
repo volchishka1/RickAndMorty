@@ -1,4 +1,5 @@
 import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export type DetailsScreenViewStyle = {
   rootContainer: ViewStyle;
@@ -6,13 +7,17 @@ export type DetailsScreenViewStyle = {
   textButtonStyle: TextStyle;
 };
 
+const insets = useSafeAreaInsets();
+
 export const detailsScreenViewStyle = StyleSheet.create<DetailsScreenViewStyle>({
   rootContainer: {
-    justifyContent: 'center',
+    paddingTop: insets.top,
+    paddingBottom: insets.bottom,
   },
   buttonStyle: {
-    marginTop: '25%',
-    marginLeft: '5%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: '5%',
   },
   textButtonStyle: {
     color: '#3b5496',
