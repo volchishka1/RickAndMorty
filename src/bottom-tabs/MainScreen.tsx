@@ -8,14 +8,17 @@ import { ROUTES } from '@constants/routes';
 import { MainStackScreenNavigatorParamList } from '@navigation/types';
 import { SettingScreen } from '@screens/settingScreen';
 import { DetailsStackNavigator } from '@root/stack/detailsStack.tsx';
+import { useAppSelector } from '@root/hooks/hooks.ts';
 
 export const MainScreenTabNavigator = () => {
   const Tab = createBottomTabNavigator<MainStackScreenNavigatorParamList>();
 
+  const getIsCharacter = useAppSelector((state) => state.toolkit.character);
+
   return (
     <Tab.Navigator
       screenOptions={{
-        // tabBarStyle: { display: url ? 'none' : 'flex' },
+        tabBarStyle: { display: getIsCharacter !== 0 ? 'none' : 'flex' },
         headerShown: false,
         tabBarShowLabel: true,
         tabBarLabelStyle: {
