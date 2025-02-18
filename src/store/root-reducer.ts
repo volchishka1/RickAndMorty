@@ -1,12 +1,11 @@
 import { combineReducers } from '@reduxjs/toolkit';
-
-import { homeScreen } from './homeScreen/homeScreen';
+import toolkitSlice from './slices.ts';
 
 export enum NameSpace {
   homeScreen = 'HOME_SCREEN',
 }
 export const rootReducer = combineReducers({
-  [NameSpace.homeScreen]: homeScreen,
+  toolkit: toolkitSlice,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
