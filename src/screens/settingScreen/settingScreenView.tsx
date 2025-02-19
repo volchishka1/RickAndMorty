@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
-import { SettingScreenViewProps } from '@screens/settingScreen/types.ts';
-import { settingScreenViewStyle } from '@screens/settingScreen/style.ts';
+import { SettingScreenViewProps } from '@screens/settingScreen/types';
+import { settingScreenViewStyle } from '@screens/settingScreen/style';
 
 export const SettingScreenView: FC<SettingScreenViewProps> = (props) => {
   const { switchTheme = () => {} } = props;
