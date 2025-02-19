@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { loadAllCharacter } from '@root/store/api-actions.ts';
-import { useDispatch, useSelector } from 'react-redux';
+import { loadAllCharacter } from '@root/store/api-actions';
+import { useDispatch } from 'react-redux';
+import { useAppSelector } from '@root/hooks/useAppSelector';
 
 export function useFetchCharacters() {
   const dispatch = useDispatch();
@@ -10,7 +11,7 @@ export function useFetchCharacters() {
 
   //get characters from store
 
-  const data = useSelector((state) => state.toolkit.characters);
+  const data = useAppSelector((state) => state.toolkit.characters);
 
   //Function for loading next page with characters
 
