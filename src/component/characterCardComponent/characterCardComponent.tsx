@@ -8,9 +8,9 @@ import {
   View,
   ViewProps,
 } from 'react-native';
-import { DotComponent } from '@root/component/dotComponent/dotComponent.tsx';
+import { DotComponent } from '@root/component/dotComponent/dotComponent';
 import React, { FC } from 'react';
-import { characterCardComponentStyle } from '@root/component/characterCardComponent/style.ts';
+import { characterCardComponentStyle } from '@root/component/characterCardComponent/style';
 
 export interface CharacterCardComponentProps {
   itemId: TouchableOpacityProps['nextFocusForward'];
