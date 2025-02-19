@@ -28,7 +28,7 @@ export const CharactersScreen: FC<CharactersScreenProps> = ({ navigation }) => {
 
   const navigateToDetailsScreen = (index: number) => {
     navigation.navigate(ROUTES.DETAILS_SCREEN);
-    dispatch(setCharacterId(index - 1));
+    dispatch(setCharacterId(index));
     dispatch(setIsCharacter(true));
     console.log(index);
   };
