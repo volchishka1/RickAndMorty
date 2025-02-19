@@ -1,9 +1,9 @@
 import React from 'react';
 import { Dropdown } from 'react-native-element-dropdown';
 import { BackIconSvg } from '@assets/back.tsx';
-import { setValueItem } from '@root/store/slices.ts';
+import { setValueItem } from '@root/store/slices';
 import { useDispatch } from 'react-redux';
-import { dropdownStyles } from '@root/component/dropDownComponent/styles.ts';
+import { dropdownStyles } from '@root/component/dropDownComponent/styles';
 
 const data = [
   { label: 'Cancel', value: '' },
