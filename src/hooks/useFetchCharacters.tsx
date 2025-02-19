@@ -8,7 +8,11 @@ export function useFetchCharacters() {
   const [characters, setCharacters] = useState([]);
   const [page, setPage] = useState<number>(1);
 
+  //get characters from store
+
   const data = useSelector((state) => state.toolkit.characters);
+
+  //Function for loading next page with characters
 
   const onEndReached = () => {
     setPage(page + 1);
