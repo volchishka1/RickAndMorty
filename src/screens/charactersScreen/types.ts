@@ -1,9 +1,8 @@
 import { ResponseData } from '@screens/detailsScreen';
-import { TouchableOpacityProps } from 'react-native';
 
 export type CharactersScreenViewProps = {
-  navigateToDetailsScreen: TouchableOpacityProps['onPress'];
-  onEndReached: any;
+  navigateToDetailsScreen: (arg: number) => void;
+  onEndReached: ((info: { distanceFromEnd: number }) => void) | undefined;
   characters: Array<ResponseData>;
   getIsLoading: boolean;
   getValueItem: string;
