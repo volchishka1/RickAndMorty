@@ -35,11 +35,5 @@ const toolkitSlice = createSlice({
 });
 
 export default toolkitSlice.reducer;
-export const {
-  setValueItem,
-  setIsLoading,
-  setIsCharacter,
-  saveCharacters,
-  setCharacterId,
-  saveEpisodes,
-} = toolkitSlice.actions;
+export const { setValueItem, setIsLoading, setIsCharacter, saveCharacters, setCharacterId } =
+  toolkitSlice.actions;
