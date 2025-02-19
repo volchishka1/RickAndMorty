@@ -1,6 +1,8 @@
 import { ThunkActionResult } from '@root/type/action.ts';
 import { saveCharacters, setIsLoading } from '@root/store/slices.ts';
 
+// function for loading data from api
+
 export const loadAllCharacter =
   (page: number): ThunkActionResult =>
   async (dispatch, _getState, api): Promise<void> => {
