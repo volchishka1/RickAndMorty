@@ -6,6 +6,7 @@ const initialState = {
   character: 0,
   isCharacter: false,
   isLoading: true,
+  valueItem: '',
 };
 
 const toolkitSlice = createSlice({
@@ -27,9 +28,18 @@ const toolkitSlice = createSlice({
     setIsLoading: (state, action) => {
       state.isLoading = action.payload;
     },
+    setValueItem: (state, action) => {
+      state.valueItem = action.payload;
+    },
   },
 });
 
 export default toolkitSlice.reducer;
-export const { setIsLoading, setIsCharacter, saveCharacters, setCharacterId, saveEpisodes } =
-  toolkitSlice.actions;
+export const {
+  setValueItem,
+  setIsLoading,
+  setIsCharacter,
+  saveCharacters,
+  setCharacterId,
+  saveEpisodes,
+} = toolkitSlice.actions;
