@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { MainStackScreenNavigatorParamList } from '@navigation/types.ts';
-import { ROUTES } from '@constants/routes.ts';
+import { MainStackScreenNavigatorParamList } from '@navigation/types';
+import { ROUTES } from '@constants/routes';
 import { DetailsScreen } from '@screens/detailsScreen';
 import { createStackNavigator } from '@react-navigation/stack';
 import { CharactersScreen } from '@screens/charactersScreen';
