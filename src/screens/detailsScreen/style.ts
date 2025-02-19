@@ -1,9 +1,14 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export type DetailsScreenViewStyle = {
   rootContainer: ViewStyle;
   buttonStyle: ViewStyle;
+  cardContainerStyle: ViewStyle;
+  cardStyle: ViewStyle;
+  imageContainerStyle: ViewStyle;
+  imageStyle: ImageStyle;
+  textHeaderContainerStyle: TextStyle;
   textButtonStyle: TextStyle;
 };
 
@@ -18,6 +23,30 @@ export const detailsScreenViewStyle = StyleSheet.create<DetailsScreenViewStyle>(
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: '5%',
+  },
+  cardContainerStyle: {
+    marginHorizontal: 25,
+    height: '85%',
+    alignItems: 'center',
+    marginBottom: 50,
+  },
+  cardStyle: {
+    flexDirection: 'column',
+    height: '100%',
+    borderRadius: 20,
+    justifyContent: 'space-around',
+  },
+  imageContainerStyle: {
+    marginVertical: 25,
+    marginBottom: 50,
+  },
+  imageStyle: {
+    width: 280,
+    height: 280,
+    borderRadius: 20,
+  },
+  textHeaderContainerStyle: {
+    marginTop: 35,
   },
   textButtonStyle: {
     color: '#3b5496',

@@ -31,23 +31,11 @@ export const DetailsScreenView: FC<DetailsScreenViewProps> = (props) => {
           itemStatus={results?.status}
           itemSpecies={results?.species}
           itemOrigin={results?.origin.name}
-          cardContainerStyle={{
-            marginHorizontal: 25,
-            height: '85%',
-            alignItems: 'center',
-            marginBottom: 50,
-          }}
-          cardStyle={{
-            flexDirection: 'column',
-            height: '100%',
-            borderRadius: 20,
-            justifyContent: 'space-around',
-          }}
-          imageContainerStyle={{ marginVertical: 25, marginBottom: 50 }}
-          imageStyle={{ width: 280, height: 280, borderRadius: 20 }}
-          textHeaderContainerStyle={{
-            marginTop: 35,
-          }}
+          cardContainerStyle={detailsScreenViewStyle.cardContainerStyle}
+          cardStyle={detailsScreenViewStyle.cardStyle}
+          imageContainerStyle={detailsScreenViewStyle.imageContainerStyle}
+          imageStyle={detailsScreenViewStyle.imageStyle}
+          textHeaderContainerStyle={detailsScreenViewStyle.textHeaderContainerStyle}
         />
       </View>
     </View>
