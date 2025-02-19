@@ -13,7 +13,7 @@ import React, { FC } from 'react';
 import { characterCardComponentStyle } from '@root/component/characterCardComponent/style.ts';
 
 export interface CharacterCardComponentProps {
-  itemId: TouchableOpacityProps['id'];
+  itemId: TouchableOpacityProps['nextFocusForward'];
   onPress?: TouchableOpacityProps['onPress'];
   getIsCharacter?: TouchableOpacityProps['children'];
   itemImage: ImageProps['src'];
