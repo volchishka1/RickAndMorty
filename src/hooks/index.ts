@@ -1,2 +1,2 @@
 export * from './useFetchCharacters.tsx';
-export * from './hooks.ts';
+export * from './useAppSelector.ts';
