@@ -1,12 +1,12 @@
 import React, { FC, useEffect, useState } from 'react';
-import { DetailsScreenView } from '@screens/detailsScreen/detailsScreenView.tsx';
+import { DetailsScreenView } from '@screens/detailsScreen/detailsScreenView';
 import { ROUTES } from '@constants/routes.ts';
 import { CompositeScreenProps, useNavigation } from '@react-navigation/native';
-import { MainStackScreenNavigatorParamList } from '@navigation/types.ts';
+import { MainStackScreenNavigatorParamList } from '@navigation/types';
 import { StackScreenProps } from '@react-navigation/stack';
-import { useAppSelector } from '@root/hooks/hooks.ts';
+import { useAppSelector } from '@root/hooks/useAppSelector';
 import { useDispatch } from 'react-redux';
-import { setCharacterId, setIsCharacter } from '@root/store/slices.ts';
+import { setCharacterId, setIsCharacter } from '@root/store/slices';
 import { useFetchCharacters } from '@root/hooks';
 
 export type DetailsScreenProps = CompositeScreenProps<
