@@ -11,7 +11,7 @@ export const DotComponent: FC<DotProps> = (props) => {
   return (
     <View
       style={{
-        backgroundColor: status === 'Alive' ? 'green' : 'red',
+        backgroundColor: status === 'Alive' ? 'green' : status === 'Dead' ? 'red' : 'grey',
         width: 10,
         height: 10,
         borderRadius: 10,
