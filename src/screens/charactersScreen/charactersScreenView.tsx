@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { ActivityIndicator, FlatList, View } from 'react-native';
+import { FlatList, View } from 'react-native';
 import { CharactersScreenViewProps } from '@screens/charactersScreen/types.ts';
 import { charactersScreenViewStyle } from '@screens/charactersScreen/style.ts';
 import { CharacterCardComponent } from '@root/component/characterCardComponent/characterCardComponent.tsx';
