@@ -26,9 +26,10 @@ export const detailsScreenViewStyle = StyleSheet.create<DetailsScreenViewStyle>(
   },
   cardContainerStyle: {
     marginHorizontal: 25,
-    height: '85%',
+    height: 550,
     alignItems: 'center',
     marginBottom: 50,
+    borderWidth: 10,
   },
   cardStyle: {
     flexDirection: 'column',
