@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
-import { detailsScreenViewStyle } from '@screens/detailsScreen/style.ts';
-import { DetailsScreenViewProps } from '@screens/detailsScreen/types.ts';
-import { CharacterCardComponent } from '@root/component/characterCardComponent/characterCardComponent.tsx';
+import { detailsScreenViewStyle } from '@screens/detailsScreen/style';
+import { DetailsScreenViewProps } from '@screens/detailsScreen/types';
+import { CharacterCardComponent } from '@root/component/characterCardComponent/characterCardComponent';
 import { BackIconSvg } from '@assets/back.tsx';
 
 export const DetailsScreenView: FC<DetailsScreenViewProps> = (props) => {
