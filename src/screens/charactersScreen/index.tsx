@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import { CharactersScreenView } from '@screens/charactersScreen/charactersScreenView.tsx';
 import { CompositeScreenProps } from '@react-navigation/native';
 import { StackScreenProps } from '@react-navigation/stack';
@@ -6,7 +6,9 @@ import { MainStackScreenNavigatorParamList } from '@navigation/types.ts';
 import { ROUTES } from '@constants/routes.ts';
 import { useDispatch } from 'react-redux';
 import { setCharacterId, setIsCharacter } from '@root/store/slices.ts';
-import { useFetchCharacters } from '@root/hooks';
+import { useAppSelector, useFetchCharacters } from '@root/hooks';
+import { NetInfoState, useNetInfo } from '@react-native-community/netinfo';
+import { Alert } from 'react-native';
 
 export type CharactersScreenProps = CompositeScreenProps<
   StackScreenProps<MainStackScreenNavigatorParamList, ROUTES.CHARACTERS_SCREEN>,
@@ -16,19 +18,40 @@ export type CharactersScreenProps = CompositeScreenProps<
 export const CharactersScreen: FC<CharactersScreenProps> = ({ navigation }) => {
   const dispatch = useDispatch();
 
+  const internetState: NetInfoState = useNetInfo();
+
   const { characters, onEndReached } = useFetchCharacters();
+  const getIsLoading = useAppSelector((state) => state.toolkit.isLoading);
+  const getValueItem = useAppSelector((state) => state.toolkit.valueItem);
+
+  // function for navigate to detailScreen
 
   const navigateToDetailsScreen = (index: number) => {
     navigation.navigate(ROUTES.DETAILS_SCREEN);
     dispatch(setCharacterId(index - 1));
     dispatch(setIsCharacter(true));
+    console.log(index);
   };
+
+  //Function for check internet connection
+
+  const checkInternetConnection = () => {
+    if (internetState.isConnected === false) {
+      Alert.alert(`no internet connection`, `sorry`, [{ text: `okay` }]);
+    }
+  };
+
+  useEffect(() => {
+    checkInternetConnection();
+  }, [internetState]);
 
   return (
     <CharactersScreenView
       navigateToDetailsScreen={navigateToDetailsScreen}
       characters={characters}
       onEndReached={onEndReached}
+      getIsLoading={getIsLoading}
+      getValueItem={getValueItem}
     />
   );
 };
