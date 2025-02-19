@@ -1,12 +1,12 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC } from 'react';
 import { CharactersScreenView } from '@screens/charactersScreen/charactersScreenView.tsx';
 import { CompositeScreenProps } from '@react-navigation/native';
 import { StackScreenProps } from '@react-navigation/stack';
 import { MainStackScreenNavigatorParamList } from '@navigation/types.ts';
 import { ROUTES } from '@constants/routes.ts';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setCharacterId, setIsCharacter } from '@root/store/slices.ts';
-import { loadAllCharacter } from '@root/store/api-actions.ts';
+import { useFetchCharacters } from '@root/hooks';
 
 export type CharactersScreenProps = CompositeScreenProps<
   StackScreenProps<MainStackScreenNavigatorParamList, ROUTES.CHARACTERS_SCREEN>,
@@ -16,9 +16,7 @@ export type CharactersScreenProps = CompositeScreenProps<
 export const CharactersScreen: FC<CharactersScreenProps> = ({ navigation }) => {
   const dispatch = useDispatch();
 
-  const [results, setResults] = useState([]);
-
-  const data = useSelector((state) => state.toolkit.characters);
+  const { characters, onEndReached } = useFetchCharacters();
 
   const navigateToDetailsScreen = (index: number) => {
     navigation.navigate(ROUTES.DETAILS_SCREEN);
@@ -26,15 +24,11 @@ export const CharactersScreen: FC<CharactersScreenProps> = ({ navigation }) => {
     dispatch(setIsCharacter(true));
   };
 
-  useEffect(() => {
-    dispatch(loadAllCharacter());
-  }, []);
-
-  useEffect(() => {
-    setResults(data);
-  }, [data]);
-
   return (
-    <CharactersScreenView navigateToDetailsScreen={navigateToDetailsScreen} results={results} />
+    <CharactersScreenView
+      navigateToDetailsScreen={navigateToDetailsScreen}
+      characters={characters}
+      onEndReached={onEndReached}
+    />
   );
 };
