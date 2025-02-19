@@ -31,7 +31,7 @@ export interface CharacterCardComponentProps {
   imageStyle?: ImageProps['style'];
 }
 
-export const CharacterCardComponent: FC<CharacterCardComponentProps> = (props) => {
+export const CharacterCardComponent: FC<CharacterCardComponentProps> = React.memo((props) => {
   const {
     itemId,
     itemImage,
@@ -91,4 +91,4 @@ export const CharacterCardComponent: FC<CharacterCardComponentProps> = (props) =
       </View>
     </TouchableOpacity>
   );
-};
+});
