@@ -2,13 +2,13 @@ import React from 'react';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { CharacterSvg } from '@assets/character.tsx';
+import { CharacterSvg } from '@assets/character';
 import { SettingSvg } from '@assets/setting';
 import { ROUTES } from '@constants/routes';
 import { MainStackScreenNavigatorParamList } from '@navigation/types';
 import { SettingScreen } from '@screens/settingScreen';
-import { DetailsStackNavigator } from '@root/stack/detailsStack.tsx';
-import { useAppSelector } from '@root/hooks/hooks.ts';
+import { DetailsStackNavigator } from '@root/stack/detailsStack';
+import { useAppSelector } from '@root/hooks/useAppSelector';
 
 export const MainScreenTabNavigator = () => {
   const Tab = createBottomTabNavigator<MainStackScreenNavigatorParamList>();
