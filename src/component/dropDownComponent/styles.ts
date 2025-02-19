@@ -14,10 +14,11 @@ export const dropdownStyles = StyleSheet.create<DropdownStylesProps>({
     height: 50,
     borderBottomColor: 'gray',
     borderBottomWidth: 0.5,
-    width: '90%',
+    width: '100%',
   },
   placeholderStyle: {
     fontSize: 16,
+    color: '#3468f8',
   },
   selectedTextStyle: {
     fontSize: 16,
