@@ -4,6 +4,7 @@ import { CharactersScreenViewProps } from '@screens/charactersScreen/types.ts';
 import { charactersScreenViewStyle } from '@screens/charactersScreen/style.ts';
 import { CharacterCardComponent } from '@root/component/characterCardComponent/characterCardComponent.tsx';
 import { DropdownComponent } from '@root/component/dropDownComponent/dropdownComponent.tsx';
+import { LoadingSpinner } from '@root/component/customLoaderComponent/customLoaderComponent.tsx';
 
 export const CharactersScreenView: FC<CharactersScreenViewProps> = (props) => {
   const {
@@ -21,9 +22,15 @@ export const CharactersScreenView: FC<CharactersScreenViewProps> = (props) => {
 
   return (
     <View style={charactersScreenViewStyle.rootContainer}>
-      <DropdownComponent />
+      {!getIsLoading && (
+        <View style={charactersScreenViewStyle.topContainer}>
+          <DropdownComponent />
+        </View>
+      )}
       {getIsLoading ? (
-        <ActivityIndicator size='large' />
+        <View style={{ marginTop: '50%' }}>
+          <LoadingSpinner color={'red'} />
+        </View>
       ) : (
         <FlatList
           initialNumToRender={5}
