@@ -1,13 +1,13 @@
 import React, { FC, useEffect, useState } from 'react';
 import { DetailsScreenView } from '@screens/detailsScreen/detailsScreenView.tsx';
 import { ROUTES } from '@constants/routes.ts';
-import { CompositeScreenProps } from '@react-navigation/native';
+import { CompositeScreenProps, useNavigation } from '@react-navigation/native';
 import { MainStackScreenNavigatorParamList } from '@navigation/types.ts';
 import { StackScreenProps } from '@react-navigation/stack';
 import { useAppSelector } from '@root/hooks/hooks.ts';
-import { loadAllCharacter } from '@root/store/api-actions.ts';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setCharacterId, setIsCharacter } from '@root/store/slices.ts';
+import { useFetchCharacters } from '@root/hooks';
 
 export type DetailsScreenProps = CompositeScreenProps<
   StackScreenProps<MainStackScreenNavigatorParamList, ROUTES.DETAILS_SCREEN>,
@@ -35,27 +35,26 @@ export interface ResponseData {
   created: string;
 }
 
-export const DetailsScreen: FC<DetailsScreenProps> = ({ navigation }) => {
+export const DetailsScreen: FC<DetailsScreenProps> = () => {
   const [results, setResults] = useState<ResponseData>();
   const dispatch = useDispatch();
+  const navigation = useNavigation();
 
-  const data: ResponseData[] = useSelector((state) => state.toolkit.characters);
+  const { characters } = useFetchCharacters();
+
   const getCharacterId = useAppSelector((state) => state.toolkit.character);
   const getIsCharacter = useAppSelector((state) => state.toolkit.isCharacter);
 
   const backToCharacterScreen = () => {
-    navigation.navigate(ROUTES.CHARACTERS_SCREEN);
+    navigation.goBack();
     dispatch(setCharacterId(0));
     dispatch(setIsCharacter(false));
   };
 
   useEffect(() => {
-    dispatch(loadAllCharacter());
-  }, []);
-
-  useEffect(() => {
-    setResults(data[getCharacterId]);
-  }, [data]);
+    setResults(characters[getCharacterId]);
+    console.log(characters + 'characters');
+  }, [characters]);
 
   return (
     <DetailsScreenView
