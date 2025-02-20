@@ -7,7 +7,6 @@ import { StackScreenProps } from '@react-navigation/stack';
 import { useAppSelector } from '@root/hooks/useAppSelector';
 import { useDispatch } from 'react-redux';
 import { setCharacterId, setIsCharacter } from '@root/store/slices';
-import { useFetchCharacters } from '@root/hooks';
 
 export type DetailsScreenProps = CompositeScreenProps<
   StackScreenProps<MainStackScreenNavigatorParamList, ROUTES.DETAILS_SCREEN>,
