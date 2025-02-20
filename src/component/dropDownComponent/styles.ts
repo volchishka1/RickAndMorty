@@ -22,6 +22,7 @@ export const dropdownStyles = StyleSheet.create<DropdownStylesProps>({
   },
   selectedTextStyle: {
     fontSize: 16,
+    color: '#3b5496',
   },
   iconStyle: {
     width: 20,
@@ -30,5 +31,6 @@ export const dropdownStyles = StyleSheet.create<DropdownStylesProps>({
   inputSearchStyle: {
     height: 40,
     fontSize: 16,
+    color: '#3b5496',
   },
 });
