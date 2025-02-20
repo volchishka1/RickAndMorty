@@ -37,7 +37,7 @@ export const CharactersScreenView: FC<CharactersScreenViewProps> = (props) => {
           keyExtractor={(item) => item.id.toString()}
           onEndReached={onEndReached}
           onEndReachedThreshold={0.5}
-          decelerationRate={'normal'}
+          decelerationRate={'fast'}
           showsVerticalScrollIndicator={false}
           style={charactersScreenViewStyle.centerContainer}
           data={filteredItems}
