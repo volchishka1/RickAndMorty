@@ -45,7 +45,7 @@ export const CharactersScreenView: FC<CharactersScreenViewProps> = (props) => {
           renderItem={(item) => (
             <CharacterCardComponent
               {...item}
-              onPress={() => navigateToDetailsScreen(item.index)}
+              onPress={() => navigateToDetailsScreen(item.item.id)}
               itemId={item.item.id}
               itemImage={item.item.image}
               itemGender={item.item.gender}
