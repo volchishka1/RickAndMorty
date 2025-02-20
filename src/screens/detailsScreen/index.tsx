@@ -42,7 +42,6 @@ export const DetailsScreen: FC<DetailsScreenProps> = () => {
 
   const { characters } = useFetchCharacters();
 
-  const getCharacterId = useAppSelector((state) => state.toolkit.character);
   const getIsCharacter = useAppSelector((state) => state.toolkit.isCharacter);
   const getCharacter = useAppSelector((state) => state.toolkit.characterItem);
 
@@ -60,7 +59,6 @@ export const DetailsScreen: FC<DetailsScreenProps> = () => {
     <DetailsScreenView
       backToCharacterScreen={backToCharacterScreen}
       character={character}
-      getCharacterId={getCharacterId}
       getIsCharacter={getIsCharacter}
     />
   );
