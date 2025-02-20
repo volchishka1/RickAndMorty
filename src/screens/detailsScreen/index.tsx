@@ -40,8 +40,6 @@ export const DetailsScreen: FC<DetailsScreenProps> = () => {
   const dispatch = useDispatch();
   const navigation = useNavigation();
 
-  const { characters } = useFetchCharacters();
-
   const getIsCharacter = useAppSelector((state) => state.toolkit.isCharacter);
   const getCharacter = useAppSelector((state) => state.toolkit.characterItem);
 
@@ -53,7 +51,7 @@ export const DetailsScreen: FC<DetailsScreenProps> = () => {
 
   useEffect(() => {
     setCharacter(getCharacter);
-  }, [characters]);
+  }, []);
 
   return (
     <DetailsScreenView
