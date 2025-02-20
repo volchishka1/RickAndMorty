@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   characters: [],
-  episodes: [],
+  characterItem: [],
   character: 0,
   isCharacter: false,
   isLoading: true,
@@ -16,8 +16,8 @@ const toolkitSlice = createSlice({
     saveCharacters: (state, action) => {
       state.characters = action.payload;
     },
-    saveEpisodes: (state, action) => {
-      state.episodes = action.payload;
+    setCharacterItem: (state, action) => {
+      state.characterItem = action.payload;
     },
     setCharacterId: (state, action) => {
       state.character = action.payload;
@@ -35,5 +35,11 @@ const toolkitSlice = createSlice({
 });
 
 export default toolkitSlice.reducer;
-export const { setValueItem, setIsLoading, setIsCharacter, saveCharacters, setCharacterId } =
-  toolkitSlice.actions;
+export const {
+  setCharacterItem,
+  setValueItem,
+  setIsLoading,
+  setIsCharacter,
+  saveCharacters,
+  setCharacterId,
+} = toolkitSlice.actions;

@@ -36,7 +36,7 @@ export interface ResponseData {
 }
 
 export const DetailsScreen: FC<DetailsScreenProps> = () => {
-  const [results, setResults] = useState<ResponseData>();
+  const [character, setCharacter] = useState<ResponseData>();
   const dispatch = useDispatch();
   const navigation = useNavigation();
 
@@ -44,6 +44,7 @@ export const DetailsScreen: FC<DetailsScreenProps> = () => {
 
   const getCharacterId = useAppSelector((state) => state.toolkit.character);
   const getIsCharacter = useAppSelector((state) => state.toolkit.isCharacter);
+  const getCharacter = useAppSelector((state) => state.toolkit.characterItem);
 
   const backToCharacterScreen = () => {
     navigation.goBack();
@@ -52,14 +53,13 @@ export const DetailsScreen: FC<DetailsScreenProps> = () => {
   };
 
   useEffect(() => {
-    setResults(characters[getCharacterId]);
-    console.log(characters + 'characters');
+    setCharacter(getCharacter);
   }, [characters]);
 
   return (
     <DetailsScreenView
       backToCharacterScreen={backToCharacterScreen}
-      results={results}
+      character={character}
       getCharacterId={getCharacterId}
       getIsCharacter={getIsCharacter}
     />

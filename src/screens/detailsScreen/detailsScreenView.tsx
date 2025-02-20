@@ -6,7 +6,7 @@ import { CharacterCardComponent } from '@root/component/characterCardComponent/c
 import { BackIconSvg } from '@assets/back.tsx';
 
 export const DetailsScreenView: FC<DetailsScreenViewProps> = (props) => {
-  const { backToCharacterScreen, results, getIsCharacter } = props;
+  const { backToCharacterScreen, character, getIsCharacter } = props;
 
   return (
     <View style={detailsScreenViewStyle.rootContainer}>
@@ -22,15 +22,15 @@ export const DetailsScreenView: FC<DetailsScreenViewProps> = (props) => {
       <View>
         <CharacterCardComponent
           getIsCharacter={getIsCharacter}
-          itemGender={results?.gender}
-          itemLocationName={results?.location?.name}
-          itemImage={results?.image}
-          itemId={results?.id}
-          itemName={results?.name}
-          itemEpisode={results?.episode[0]}
-          itemStatus={results?.status}
-          itemSpecies={results?.species}
-          itemOrigin={results?.origin.name}
+          itemGender={character?.gender}
+          itemLocationName={character?.location?.name}
+          itemImage={character?.image}
+          itemId={character?.id}
+          itemName={character?.name}
+          itemEpisode={character?.episode[0]}
+          itemStatus={character?.status}
+          itemSpecies={character?.species}
+          itemOrigin={character?.origin.name}
           cardContainerStyle={detailsScreenViewStyle.cardContainerStyle}
           cardStyle={detailsScreenViewStyle.cardStyle}
           imageContainerStyle={detailsScreenViewStyle.imageContainerStyle}
